@@ -19,7 +19,7 @@ namespace OrderManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UrunForm urunForm = new UrunForm();
+            UrunTopSayi urunForm = new UrunTopSayi();
             urunForm.Show();
           //  this.Hide();
         }

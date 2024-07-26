@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace OrderManagementSystem
         private void button1_Click(object sender, EventArgs e)
         {
             tumKayitleriGoster();
+            MusteriSayisiGuncelle();
         }
         private void tumKayitleriGoster()
         {
@@ -41,6 +43,11 @@ namespace OrderManagementSystem
         {
             tumKayitleriGoster();
             textBoxMusteriID.Text = "0";
+           MusteriSayisiGuncelle();
+        }
+        private void MusteriSayisiGuncelle()
+        {
+            labelSayı.Text = entities.Musteri.Count().ToString();
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -60,6 +67,7 @@ namespace OrderManagementSystem
                 MessageBox.Show("Error occurred during database operations . ERROR CODE: E3106\n" + ex.Message);
             }
             MetinKutulariniTemizle();
+            MusteriSayisiGuncelle();
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -84,7 +92,8 @@ namespace OrderManagementSystem
                 MessageBox.Show("Error occurred during database operations or values cannot be empty . ERROR CODE: E3107\n" + ex.Message);
             }
             tumKayitleriGoster();
-            MetinKutulariniTemizle();          
+            MetinKutulariniTemizle();
+            MusteriSayisiGuncelle();
         }
         private void MetinKutulariniTemizle()
         {
@@ -110,6 +119,25 @@ namespace OrderManagementSystem
             {
                 MessageBox.Show("Error occurred during database operations or values cannot be empty . ERROR CODE: E3121\n");
             }
+            MusteriSayisiGuncelle();
+        }
+
+        private void buttonSorgu_Click(object sender, EventArgs e)
+        {
+            var musteriler = (from musteri in entities.Musteri
+                              where DbFunctions.Like(musteri.Ad,textBoxAd.Text.ToString()+"%") &&
+                              DbFunctions.Like(musteri.Soyad, textBoxSoyad.Text.ToString() + "%") && 
+                              DbFunctions.Like(musteri.Sehir, textBoxSehir.Text.ToString() + "%")
+                              select musteri).ToList();
+            dataGridView1.DataSource = musteriler;
+
+
+
+
+
+
+            dataGridView1.ClearSelection();
+            MetinKutulariniTemizle();
         }
     }
 }

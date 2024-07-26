@@ -41,6 +41,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelSayı = new System.Windows.Forms.Label();
+            this.buttonSorgu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,9 +131,10 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.Location = new System.Drawing.Point(346, 263);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(182, 26);
+            this.button1.Size = new System.Drawing.Size(247, 31);
             this.button1.TabIndex = 9;
             this.button1.Text = "Tüm Kayıtları Listele";
             this.button1.UseVisualStyleBackColor = true;
@@ -138,9 +142,10 @@
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.Location = new System.Drawing.Point(346, 300);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(182, 26);
+            this.button2.Size = new System.Drawing.Size(247, 32);
             this.button2.TabIndex = 10;
             this.button2.Text = "Yeni Kayıt Ekle";
             this.button2.UseVisualStyleBackColor = true;
@@ -148,9 +153,10 @@
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button3.Location = new System.Drawing.Point(346, 338);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(182, 26);
+            this.button3.Size = new System.Drawing.Size(247, 29);
             this.button3.TabIndex = 11;
             this.button3.Text = "Müşteri Kaydını Sil";
             this.button3.UseVisualStyleBackColor = true;
@@ -158,20 +164,54 @@
             // 
             // button4
             // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button4.Location = new System.Drawing.Point(346, 373);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(182, 26);
+            this.button4.Size = new System.Drawing.Size(247, 34);
             this.button4.TabIndex = 12;
             this.button4.Text = "Müşteri Kaydını Güncelle";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(27, 230);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(216, 25);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Toplam Müşteri Sayısı :";
+            // 
+            // labelSayı
+            // 
+            this.labelSayı.AutoSize = true;
+            this.labelSayı.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelSayı.Location = new System.Drawing.Point(249, 230);
+            this.labelSayı.Name = "labelSayı";
+            this.labelSayı.Size = new System.Drawing.Size(0, 31);
+            this.labelSayı.TabIndex = 14;
+            // 
+            // buttonSorgu
+            // 
+            this.buttonSorgu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.buttonSorgu.Location = new System.Drawing.Point(151, 412);
+            this.buttonSorgu.Name = "buttonSorgu";
+            this.buttonSorgu.Size = new System.Drawing.Size(131, 44);
+            this.buttonSorgu.TabIndex = 15;
+            this.buttonSorgu.Text = "Sorgula";
+            this.buttonSorgu.UseVisualStyleBackColor = true;
+            this.buttonSorgu.Click += new System.EventHandler(this.buttonSorgu_Click);
             // 
             // MusteriForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Salmon;
-            this.ClientSize = new System.Drawing.Size(818, 429);
+            this.ClientSize = new System.Drawing.Size(812, 468);
+            this.Controls.Add(this.buttonSorgu);
+            this.Controls.Add(this.labelSayı);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -209,5 +249,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelSayı;
+        private System.Windows.Forms.Button buttonSorgu;
     }
 }

@@ -43,6 +43,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labelUrunSayisi = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,20 +188,87 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button4.Location = new System.Drawing.Point(1094, 308);
+            this.button4.Location = new System.Drawing.Point(1103, 308);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(118, 65);
+            this.button4.Size = new System.Drawing.Size(109, 65);
             this.button4.TabIndex = 14;
             this.button4.Text = "Ürün Güncelle";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button5.Location = new System.Drawing.Point(731, 405);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(171, 71);
+            this.button5.TabIndex = 15;
+            this.button5.Text = "Müşteri ID ile Sorgulama";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(423, 172);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(8, 8);
+            this.button6.TabIndex = 16;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(731, 553);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(217, 25);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Toplam Sipariş Sayısı : ";
+            // 
+            // labelUrunSayisi
+            // 
+            this.labelUrunSayisi.AutoSize = true;
+            this.labelUrunSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelUrunSayisi.Location = new System.Drawing.Point(954, 553);
+            this.labelUrunSayisi.Name = "labelUrunSayisi";
+            this.labelUrunSayisi.Size = new System.Drawing.Size(0, 31);
+            this.labelUrunSayisi.TabIndex = 18;
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button7.Location = new System.Drawing.Point(908, 405);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(154, 71);
+            this.button7.TabIndex = 19;
+            this.button7.Text = "Ürün ID ile Sorgulama";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button8.Location = new System.Drawing.Point(1068, 405);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(144, 71);
+            this.button8.TabIndex = 20;
+            this.button8.Text = "Tarihe göre  Sorgulama";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // SiparisForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PapayaWhip;
-            this.ClientSize = new System.Drawing.Size(1220, 660);
+            this.ClientSize = new System.Drawing.Size(1251, 660);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.labelUrunSayisi);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -237,5 +310,11 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelUrunSayisi;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }

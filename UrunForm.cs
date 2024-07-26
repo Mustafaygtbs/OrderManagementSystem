@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,10 +11,10 @@ using System.Windows.Forms;
 
 namespace OrderManagementSystem
 {
-    public partial class UrunForm : Form
+    public partial class UrunTopSayi : Form
     {
         ProjelerVTEntities entities = new ProjelerVTEntities();
-        public UrunForm()
+        public UrunTopSayi()
         {
             InitializeComponent();
         }
@@ -21,6 +22,7 @@ namespace OrderManagementSystem
         private void button1_Click(object sender, EventArgs e)
         {
             tumKayitleriGoster();
+            MusteriSayisiGuncelle();
         }
         private void tumKayitleriGoster()
         {
@@ -54,15 +56,21 @@ namespace OrderManagementSystem
                 MessageBox.Show("Error occurred during database operations . ERROR CODE: E3108\n" + ex.Message);
             }
             MetinKutulariniTemizle();
+            MusteriSayisiGuncelle();
         }
 
         private void UrunForm_Load(object sender, EventArgs e)
         {
             tumKayitleriGoster();
             textBoxUrunID.Text = "0";
+            MusteriSayisiGuncelle();
+        }
+        private void MusteriSayisiGuncelle()
+        {
+            labelTopSayi.Text = entities.Urun.Count().ToString();
         }
 
-      
+
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -88,6 +96,7 @@ namespace OrderManagementSystem
             }
             tumKayitleriGoster();
             MetinKutulariniTemizle();
+            MusteriSayisiGuncelle();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -106,8 +115,32 @@ namespace OrderManagementSystem
             {
                 MessageBox.Show("Error occurred during database operations or values cannot be empty . ERROR CODE: E0612\n");
             }
+            MusteriSayisiGuncelle();
+        }
 
-           
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            if(textBoxUrunFiyat.Text.ToString().Length==0)
+            {
+                var urunler = (from urun in entities.Urun
+                           where DbFunctions.Like(urun.Ad, textBoxUrunAd.Text.ToString() + "%")
+                           select urun).ToList();
+                dataGridView1.DataSource = urunler;
+            }
+            else
+            {
+                int fiyat= Convert.ToInt32(textBoxUrunFiyat.Text);
+                var urunler = (from urun in entities.Urun
+                           where DbFunctions.Like(urun.Ad, textBoxUrunAd.Text.ToString() + "%") &&
+                                 urun.Fiyat == fiyat
+                                 select urun).ToList();
+
+            dataGridView1.DataSource = urunler;
+            }           
+            dataGridView1.ClearSelection();
+            MetinKutulariniTemizle();
+            MusteriSayisiGuncelle();
         }
     }
 }

@@ -31,6 +31,7 @@ namespace OrderManagementSystem
         private void button1_Click(object sender, EventArgs e)
         {
             TumKayitlariGoster();
+            MusteriSayisiGuncelle();
         }
         private void TumKayitlariGoster()
         {
@@ -67,7 +68,11 @@ namespace OrderManagementSystem
                 MessageBox.Show("Error occurred during database operations . ERROR CODE: E3154 \n");
             }
             TumKayitlariGoster();
-
+            MusteriSayisiGuncelle();
+        }
+        private void MusteriSayisiGuncelle()
+        {
+            labelUrunSayisi.Text = entities.Siparis.Count().ToString();
         }
 
         private void SiparisForm_Load(object sender, EventArgs e)
@@ -96,6 +101,7 @@ namespace OrderManagementSystem
             comboBoxUrunId.DataSource = urunler;
             TumKayitlariGoster();
             dataGridView1.ClearSelection();
+            MusteriSayisiGuncelle();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -113,6 +119,7 @@ namespace OrderManagementSystem
                 MessageBox.Show("Error occurred during database operations . ERROR CODE: E3170 \n");
             }
             TumKayitlariGoster();
+            MusteriSayisiGuncelle();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -133,6 +140,38 @@ namespace OrderManagementSystem
                 MessageBox.Show("Error occurred during database operations . ERROR CODE: E3155 \n");
             }
             TumKayitlariGoster();
+            MusteriSayisiGuncelle();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int musteriId = Convert.ToInt32(comboBoxMusteriId.SelectedValue.ToString());
+            var siparisler = (from siparis in entities.Siparis
+                              where siparis.MusteriID == musteriId
+                              select siparis).ToList();
+            dataGridView1.DataSource = siparisler;
+            dataGridView1.ClearSelection();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            int urunId = Convert.ToInt32(comboBoxUrunId.SelectedValue.ToString());
+            var siparisler = (from siparis in entities.Siparis
+                              where siparis.UrunID == urunId
+                              select siparis).ToList();
+                         
+            dataGridView1.DataSource = siparisler;
+            dataGridView1.ClearSelection();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            DateTime date = dateTimePickerTarih.Value.Date;
+            var siparisler = (from siparis in entities.Siparis
+                              where siparis.Tarih == date
+                              select siparis).ToList();
+            dataGridView1.DataSource = siparisler;
+            dataGridView1.ClearSelection();
         }
     }
 }

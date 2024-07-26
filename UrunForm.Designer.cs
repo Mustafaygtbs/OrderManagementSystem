@@ -1,6 +1,6 @@
 ﻿namespace OrderManagementSystem
 {
-    partial class UrunForm
+    partial class UrunTopSayi
     {
         /// <summary>
         /// Required designer variable.
@@ -39,6 +39,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelTopSayi = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,12 +149,44 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // UrunForm
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(17, 463);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(199, 25);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Toplam Ürün Sayısı : ";
+            // 
+            // labelTopSayi
+            // 
+            this.labelTopSayi.AutoSize = true;
+            this.labelTopSayi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.labelTopSayi.Location = new System.Drawing.Point(222, 463);
+            this.labelTopSayi.Name = "labelTopSayi";
+            this.labelTopSayi.Size = new System.Drawing.Size(0, 31);
+            this.labelTopSayi.TabIndex = 19;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(389, 470);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(182, 29);
+            this.button5.TabIndex = 20;
+            this.button5.Text = "Ürün Sorgula";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // UrunTopSayi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSalmon;
-            this.ClientSize = new System.Drawing.Size(698, 485);
+            this.ClientSize = new System.Drawing.Size(698, 521);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.labelTopSayi);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -163,7 +198,7 @@
             this.Controls.Add(this.textBoxUrunAd);
             this.Controls.Add(this.textBoxUrunID);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "UrunForm";
+            this.Name = "UrunTopSayi";
             this.Text = "UrunForm";
             this.Load += new System.EventHandler(this.UrunForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -185,5 +220,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelTopSayi;
+        private System.Windows.Forms.Button button5;
     }
 }
