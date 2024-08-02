@@ -32,3 +32,7 @@ In the login panel, user passwords are securely stored using the SHA-256 hashing
 a member of the Secure Hash Algorithm family, is widely used for cryptographic hash functions.
 This algorithm generates a fixed-length hash value from the data and is irreversible,
 meaning the original data cannot be recovered from the hash. This enhances the security of passwords and helps protect sensitive information.
+
+https://github.com/user-attachments/assets/b50b897e-0c0e-4b31-910c-a8ac7cab1308
+
+
